@@ -28,7 +28,6 @@ class PlaySelectionState extends MusicBeatState
 	var camFollow:FlxObject;
 
 	var bg:FlxSprite = new FlxSprite();
-	var checker:FlxBackdrop = new FlxBackdrop(Paths.image('ui/checkeredBG'), 0.2, 0.2, true, true);
 	var gradientBar:FlxSprite = new FlxSprite(0, 0).makeGraphic(FlxG.width, 300, 0xFFfd719b);
 	var side:FlxSprite = new FlxSprite(0).loadGraphic(Paths.image('ui/Play_Bottom'));
 
@@ -99,9 +98,6 @@ class PlaySelectionState extends MusicBeatState
 		add(gradientBar);
 		gradientBar.scrollFactor.set(0, 0);
 		gradientBar.antialiasing = FlxG.save.data.globalAntialiasing;
-
-		add(checker);
-		checker.scrollFactor.set(0, 0.07);
 
 		side.scrollFactor.x = 0;
 		side.scrollFactor.y = 0.1;
