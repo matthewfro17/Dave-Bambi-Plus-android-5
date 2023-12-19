@@ -132,9 +132,6 @@ class MainMenuState extends MusicBeatState
 
 	var black:FlxSprite;
  
-	#if (flixel < "5.5.0")
-	var checker:FlxBackdrop = new FlxBackdrop(Paths.image('ui/checkeredBG'), 0.2, 0.2, true, true);
-	#end
 	var gradientBar:FlxSprite = new FlxSprite(0, 0).makeGraphic(FlxG.width, 300, 0xFFfd719b);
 
 	override function create()
@@ -214,9 +211,6 @@ class MainMenuState extends MusicBeatState
 				gradientBar.y = FlxG.height - gradientBar.height;
 				add(gradientBar);
 				gradientBar.scrollFactor.set(0, 0);
-		
-				add(checker);
-				checker.scrollFactor.set(0, 0.07);
 			}
 		}
 		selectUi = new FlxSprite(0, 0).loadGraphic(Paths.image('mainMenu/Select_Thing', 'preload'));
