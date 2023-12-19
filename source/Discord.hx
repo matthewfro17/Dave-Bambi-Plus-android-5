@@ -1,38 +1,21 @@
 package;
 
 import Sys.sleep;
-import discord_rpc.DiscordRpc;
 using StringTools;
 
 class DiscordClient
 {
 	public function new()
 	{
-		DiscordRpc.start({
-			clientID: "879181607666327553",
-			onReady: onReady,
-			onError: onError,
-			onDisconnected: onDisconnected
-		});
-
 		while (true)
 		{
-			DiscordRpc.process();
 			sleep(2);
 			//trace("Discord Client Update");
 		}
-
-		DiscordRpc.shutdown();
 	}
 	
 	static function onReady()
 	{
-		DiscordRpc.presence({
-			details: "In the Menus",
-			state: null,
-			largeImageKey: 'icon_logo',
-			largeImageText: "Vs Dave & Bambi - Extra Keys Addon"
-		});
 	}
 
 	static function onError(_code:Int, _message:String)
@@ -62,18 +45,6 @@ class DiscordClient
 		{
 			endTimestamp = startTimestamp + endTimestamp;
 		}
-		
-		DiscordRpc.presence({
-			details: 'NO LEAKS',
-			state: 'NO LEAKS',
-			largeImageKey: 'icon_logo',
-			largeImageText: "Vs Dave & Bambi - Extra Keys Addon - Plus",
-			smallImageKey : 'NO LEAKS',
-			// Obtained times are in milliseconds so they are divided so Discord can use it
-			startTimestamp : Std.int(startTimestamp / 1000),
-            endTimestamp : Std.int(endTimestamp / 1000)
-		});
-
 		//trace('Discord RPC Updated. Arguments: $details, $state, $smallImageKey, $hasStartTimestamp, $endTimestamp');
 	}
 }
