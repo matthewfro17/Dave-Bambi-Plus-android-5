@@ -262,7 +262,6 @@ class MusicPlayerState extends MusicBeatState
                 if (CurVocals != null)
                 {
                     CurVocals.stop();
-                    FlxG.sound.list.remove(CurVocals);
                 }
                 HideBar();
                 FlxG.sound.music.stop();
@@ -318,7 +317,6 @@ class MusicPlayerState extends MusicBeatState
                     FlxG.sound.playMusic(Paths.inst(songs[curSelected].songName), 1,true);
                     CurVocals.looped = true; //this assumes the vocal length is the same as the instrumental, which is also bad
                     CurVocals.play();
-                    FlxG.sound.list.add(CurVocals);
                 }
                 else
                 {
