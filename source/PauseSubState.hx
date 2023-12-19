@@ -116,12 +116,6 @@ class PauseSubState extends MusicBeatSubstate
 
 		if (!FlxG.save.data.lowQuality)
 		{
-			bg = new FlxBackdrop(Paths.image('ui/checkeredBG', 'preload'), 1, 1, true, true, 1, 1);
-			bg.alpha = 0;
-			bg.antialiasing = FlxG.save.data.globalAntialiasing;
-			bg.scrollFactor.set();
-			add(bg);
-
 			pausebg = new FlxSprite().loadGraphic(Paths.image('ui/pausemenubg'));
 			pausebg.color = 0xFF1E1E1E;
 			pausebg.scrollFactor.set();
