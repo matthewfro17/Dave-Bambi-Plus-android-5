@@ -331,10 +331,7 @@ class MainMenuState extends MusicBeatState
 	var selectedSomethin:Bool = false;
 
 	override function update(elapsed:Float)
-	{
-		checker.x -= 0.21;
-		checker.y -= 0.51;
-		
+	{	
 		#if SHADERS_ENABLED
 		if (voidShader != null)
 		{
